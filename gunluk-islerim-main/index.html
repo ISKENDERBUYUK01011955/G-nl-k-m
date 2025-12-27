@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Günlükçüm - Günlük İşler İçin En Kolay Platform</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    
+    <nav class="navbar">
+      <div class="container flex items-center justify-between p-4">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="bg-primary text-white p-2 rounded-lg">
+            <i data-lucide="briefcase"></i>
+          </div>
+          <span class="text-xl font-bold text-primary">Günlükçüm</span>
+        </a>
+
+        
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html" class="nav-link text-primary">Ana Sayfa</a>
+          <a href="jobs.html" class="nav-link">İlanlar</a>
+          <a href="post-job.html" class="nav-link">İlan Ver</a>
+
+          
+          <div id="auth-links" class="flex items-center gap-2">
+            <a href="auth.html" class="btn btn-outline">Giriş Yap</a>
+            <a href="auth.html?mode=register" class="btn btn-primary"
+              >Kayıt Ol</a  
+            >
+          </div>
+
+          
+          <div id="user-button" class="hidden"></div>
+        </div>
+
+        
+        <button class="md:hidden p-2" id="mobile-menu-btn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+     
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="nav-link text-primary">Ana Sayfa</a>
+        <a href="jobs.html" class="nav-link">İlanlar</a>
+        <a href="post-job.html" class="nav-link">İlan Ver</a>
+        <hr class="border-border" />
+        <a href="auth.html" class="btn btn-outline w-full">Giriş Yap</a>
+        <a href="auth.html?mode=register" class="btn btn-primary w-full"
+          >Kayıt Ol</a
+        >
+      </div>
+    </nav>
+
+    <main class="flex-1">
+      
+      <section
+        class="relative overflow-hidden bg-gradient-secondary py-20 md:py-32"
+      >
+        <div class="container">
+          <div class="grid gap-12 md:grid-cols-2 items-center">
+            <div class="space-y-6">
+              <h1
+                class="text-4xl font-bold leading-tight text-foreground md:text-5xl"
+              >
+                Günlük İşler İçin
+                <span class="text-gradient"> En Kolay Platform </span>
+              </h1>
+              <p class="text-lg text-muted-foreground md:text-xl">
+                Hızlı iş bulun veya ihtiyacınız olan elemanı dakikalar içinde
+                bulun. Günlükçüm ile çalışma hayatı artık çok daha kolay!
+              </p>
+              <div class="flex flex-wrap gap-4">
+                <a href="jobs.html" class="btn btn-hero btn-lg gap-2">
+                  <i data-lucide="search" class="w-5 h-5"></i>
+                  İş Ara
+                </a>
+                <a href="post-job.html" class="btn btn-outline btn-lg gap-2">
+                  <i data-lucide="briefcase" class="w-5 h-5"></i>
+                  İlan Ver
+                </a>
+              </div>
+            </div>
+
+            <div class="relative">
+              <div class="overflow-hidden rounded-2xl shadow-large">
+                <img
+                  src="assets/hero-image.jpg"
+                  alt="Günlük iş arayanlar"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="py-12 bg-white border-b border-border">
+        <div class="container">
+          <div class="card border border-border rounded-lg p-8 shadow-soft">
+            <div class="grid gap-8 md:grid-cols-3">
+              
+              <div class="flex items-center gap-4 justify-center p-4">
+                <div class="rounded-full bg-primary/10 p-3">
+                  <i data-lucide="briefcase" class="w-8 h-8 text-primary"></i>
+                </div>
+                <div class="text-left">
+                  <p class="text-3xl font-bold text-foreground">2,500+</p>
+                  <p class="text-sm text-muted-foreground">Aktif İlan</p>
+                </div>
+              </div>
+             
+              <div
+                class="flex items-center gap-4 justify-center p-4 border-t md:border-t-0 md:border-l border-border"
+              >
+                <div class="rounded-full bg-primary/10 p-3">
+                  <i data-lucide="users" class="w-8 h-8 text-primary"></i>
+                </div>
+                <div class="text-left">
+                  <p class="text-3xl font-bold text-foreground">15,000+</p>
+                  <p class="text-sm text-muted-foreground">Kayıtlı Kullanıcı</p>
+                </div>
+              </div>
+              
+              <div
+                class="flex items-center gap-4 justify-center p-4 border-t md:border-t-0 md:border-l border-border"
+              >
+                <div class="rounded-full bg-primary/10 p-3">
+                  <i data-lucide="trending-up" class="w-8 h-8 text-primary"></i>
+                </div>
+                <div class="text-left">
+                  <p class="text-3xl font-bold text-foreground">8,000+</p>
+                  <p class="text-sm text-muted-foreground">Başarılı Eşleşme</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="py-16 md:py-24">
+        <div class="container">
+          <div class="mb-12 text-center">
+            <h2 class="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+              Öne Çıkan İlanlar
+            </h2>
+            <p class="text-lg text-muted-foreground">
+              Bugün yayınlanan en popüler iş ilanlarını inceleyin
+            </p>
+          </div>
+
+          <div
+            id="featured-jobs-container"
+            class="grid gap-6 md:grid-cols-2 lg:grid-cols-4"
+          >
+           
+          </div>
+
+          <div class="mt-12 text-center">
+            <a href="jobs.html" class="btn btn-outline btn-lg">
+              Tüm İlanları Gör
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="grid gap-8 md:grid-cols-4">
+          <div class="space-y-4">
+            <div class="flex items-center gap-2">
+              <div class="bg-primary text-white p-2 rounded-lg">
+                <i data-lucide="briefcase"></i>
+              </div>
+              <span class="text-xl font-bold text-foreground">Günlükçüm</span>
+            </div>
+            <p class="text-sm text-muted-foreground">
+              Günlük işler ve çalışanlar için Türkiye'nin en güvenilir
+              platformu.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Hızlı Bağlantılar</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li>
+                <a href="index.html" class="hover:text-primary">Ana Sayfa</a>
+              </li>
+              <li>
+                <a href="jobs.html" class="hover:text-primary">İlanlar</a>
+              </li>
+              <li>
+                <a href="post-job.html" class="hover:text-primary">İlan Ver</a>
+              </li>
+              <li>
+                <a href="auth.html" class="hover:text-primary">Giriş Yap</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Kategoriler</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#" class="hover:text-primary">Temizlik</a></li>
+              <li><a href="#" class="hover:text-primary">Nakliye</a></li>
+              <li><a href="#" class="hover:text-primary">Tamirat</a></li>
+              <li><a href="#" class="hover:text-primary">Hizmet</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">İletişim</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li class="flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                info@gunlukcum.com
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                +90 (850) 123 45 67
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                İstanbul, Türkiye
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-border mt-12 pt-8 text-center text-sm text-muted-foreground"
+        >
+          &copy; 2024 Günlükçüm. Tüm hakları saklıdır.
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/clerk-auth.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
