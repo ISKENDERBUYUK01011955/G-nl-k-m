@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>İlan Ver - Günlükçüm</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+   
+    <nav class="navbar">
+      <div class="container flex items-center justify-between p-4">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="bg-primary text-white p-2 rounded-lg">
+            <i data-lucide="briefcase"></i>
+          </div>
+          <span class="text-xl font-bold text-primary">Günlükçüm</span>
+        </a>
+
+        
+        <div class="hidden md:flex items-center gap-6">
+          <a href="index.html" class="nav-link">Ana Sayfa</a>
+          <a href="jobs.html" class="nav-link">İlanlar</a>
+          <a href="post-job.html" class="nav-link text-primary">İlan Ver</a>
+
+          <
+          <div id="auth-links" class="flex items-center gap-2">
+            <a href="auth.html" class="btn btn-outline">Giriş Yap</a>
+            <a href="auth.html?mode=register" class="btn btn-primary"
+              >Kayıt Ol</a
+            >
+          </div>
+
+          
+          <div id="user-button" class="hidden"></div>
+        </div>
+
+        
+        <button class="md:hidden p-2" id="mobile-menu-btn">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+
+     
+      <div class="mobile-menu" id="mobile-menu">
+        <a href="index.html" class="nav-link">Ana Sayfa</a>
+        <a href="jobs.html" class="nav-link">İlanlar</a>
+        <a href="post-job.html" class="nav-link text-primary">İlan Ver</a>
+        <hr class="border-border" />
+        <a href="auth.html" class="btn btn-outline w-full">Giriş Yap</a>
+        <a href="auth.html?mode=register" class="btn btn-primary w-full"
+          >Kayıt Ol</a
+        >
+      </div>
+    </nav>
+
+    
+    <main class="flex-1 py-12 bg-secondary/50 min-h-screen">
+      <div class="container max-w-2xl mx-auto" style="max-width: 42rem">
+        <div class="card">
+          <div class="mb-8 text-center">
+            <h1 class="text-3xl font-bold mb-2">Yeni İş İlanı Oluştur</h1>
+            <p class="text-muted-foreground">
+              İlan detaylarını girerek aradığınız çalışanı hemen bulun.
+            </p>
+          </div>
+
+          <form
+            class="space-y-6"
+            onsubmit="event.preventDefault(); alert('İlanınız başarıyla oluşturuldu!'); window.location.href='jobs.html';"
+          >
+            <div class="space-y-2">
+              <label
+                class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                for="title"
+                >İlan Başlığı</label
+              >
+              <input
+                class="input"
+                id="title"
+                placeholder="Örn: Günlük Temizlik Elemanı"
+                required
+              />
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <div class="space-y-2">
+                <label class="text-sm font-medium leading-none" for="company"
+                  >Firma/Kişi Adı</label
+                >
+                <input
+                  class="input"
+                  id="company"
+                  placeholder="Firma veya Ad Soyad"
+                  required
+                />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-medium leading-none" for="city"
+                  >İl</label
+                >
+                <select class="input" id="city" required>
+                  <option value="">İl Seçiniz</option>
+                </select>
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-medium leading-none" for="district"
+                  >İlçe</label
+                >
+                <select class="input" id="district" required disabled>
+                  <option value="">İlçe Seçiniz</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid gap-4 md:grid-cols-2">
+              <div class="space-y-2">
+                <label class="text-sm font-medium leading-none" for="salary"
+                  >Ücret</label
+                >
+                <input
+                  class="input"
+                  id="salary"
+                  placeholder="Örn: 1000 TL/gün"
+                  required
+                />
+              </div>
+              <div class="space-y-2">
+                <label class="text-sm font-medium leading-none" for="type"
+                  >Çalışma Tipi</label
+                >
+                <select class="input" id="type" required>
+                  <option value="Günlük">Günlük</option>
+                  <option value="Geçici">Geçici</option>
+                  <option value="Proje Bazlı">Proje Bazlı</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none" for="description"
+                >İş Tanımı</label
+              >
+              <textarea
+                class="input min-h-[100px]"
+                id="description"
+                placeholder="İşin detaylarını buraya yazınız..."
+                style="min-height: 100px"
+                required
+              ></textarea>
+            </div>
+
+            <div class="space-y-2">
+              <label class="text-sm font-medium leading-none" for="contact"
+                >İletişim Bilgileri</label
+              >
+              <input
+                class="input"
+                id="contact"
+                placeholder="Telefon veya E-posta"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary w-full btn-lg">
+              İlanı Yayınla
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    
+    <footer class="footer bg-white border-t border-border">
+      <div class="container">
+        <div class="grid gap-8 md:grid-cols-4">
+          <div class="space-y-4">
+            <div class="flex items-center gap-2">
+              <div class="bg-primary text-white p-2 rounded-lg">
+                <i data-lucide="briefcase"></i>
+              </div>
+              <span class="text-xl font-bold text-foreground">Günlükçüm</span>
+            </div>
+            <p class="text-sm text-muted-foreground">
+              Günlük işler ve çalışanlar için Türkiye'nin en güvenilir
+              platformu.
+            </p>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Hızlı Bağlantılar</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li>
+                <a href="index.html" class="hover:text-primary">Ana Sayfa</a>
+              </li>
+              <li>
+                <a href="jobs.html" class="hover:text-primary">İlanlar</a>
+              </li>
+              <li>
+                <a href="post-job.html" class="hover:text-primary">İlan Ver</a>
+              </li>
+              <li>
+                <a href="auth.html" class="hover:text-primary">Giriş Yap</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">Kategoriler</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li><a href="#" class="hover:text-primary">Temizlik</a></li>
+              <li><a href="#" class="hover:text-primary">Nakliye</a></li>
+              <li><a href="#" class="hover:text-primary">Tamirat</a></li>
+              <li><a href="#" class="hover:text-primary">Hizmet</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 class="font-bold mb-4">İletişim</h4>
+            <ul class="space-y-2 text-sm text-muted-foreground">
+              <li class="flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+                info@gunlukcum.com
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="phone" class="w-4 h-4"></i>
+                +90 (850) 123 45 67
+              </li>
+              <li class="flex items-center gap-2">
+                <i data-lucide="map-pin" class="w-4 h-4"></i>
+                İstanbul, Türkiye
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="border-t border-border mt-12 pt-8 text-center text-sm text-muted-foreground"
+        >
+          &copy; 2024 Günlükçüm. Tüm hakları saklıdır.
+        </div>
+      </div>
+    </footer>
+
+    
+    <script src="js/data.js"></script>
+    <script src="js/cities.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/clerk-auth.js"></script>
+    <script>
+      
+      document.addEventListener("DOMContentLoaded", () => {
+        populateCities("city");
+        populateDistricts("city", "district");
+      });
+
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
